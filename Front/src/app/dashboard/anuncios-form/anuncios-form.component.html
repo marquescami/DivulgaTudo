@@ -1,0 +1,57 @@
+<form [formGroup]="anuncioForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Cadastro de Anuncios</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nome do Cliente" formControlName="cliente">
+            <mat-error *ngIf="anuncioForm.controls['investimentoPorDia'].hasError('required')">
+              Nome do Cliente é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nome do Anuncio" formControlName="nomeDoAnuncio">
+            <mat-error *ngIf="anuncioForm.controls['nomeDoAnuncio'].hasError('required')">
+              Nome do Anuncio é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Data de Inicio (db/MM/aaaa)" formControlName="dataDeInicio">
+            <mat-error *ngIf="anuncioForm.controls['dataDeInicio'].hasError('required')">
+              Data de Inicio é <strong>obrigatória</strong>
+            </mat-error>
+          </mat-form-field>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Data do Termino (db/MM/aaaa)" formControlName="dataDeTermino">
+            <mat-error *ngIf="anuncioForm.controls['dataDeTermino'].hasError('required')">
+              Data de Termino é <strong>obrigatória</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        </div>
+
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Investimento por Dia" formControlName="investimentoPorDia">
+            <mat-error *ngIf="anuncioForm.controls['investimentoPorDia'].hasError('required')">
+              Investimento por Dia é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <button mat-raised-button (click)="createAnuncio()" color="primary" [disabled]="anuncioForm.invalid">
+      Salvar
+    </button>
+  </mat-card>
+</form>
