@@ -9,3 +9,17 @@ CREATE TABLE public.tb_anuncio( id numeric (3) NOT NULL, "nomeDoAnuncio" varchar
 PASSO 2 - START NO BACK
 
 PASSO 3 - USAR O FRONT
+
+
+Criação de um sistema que permite o cadastro de anúncios. O anúncio deverá conter os seguintes dados:
+nome do anúncio
+cliente
+data de início
+data de término
+investimento por dia
+ 
+O sistema fornecerá os relatórios de cada anúncio contendo:
+valor total investido
+quantidade máxima de visualizações
+quantidade máxima de cliques
+quantidade máxima de compartilhamentos
